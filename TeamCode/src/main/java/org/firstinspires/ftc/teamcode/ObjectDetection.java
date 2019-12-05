@@ -99,8 +99,9 @@ public class ObjectDetection extends LinearOpMode {
                         double midV = (recognition.getTop()+recognition.getBottom())/2;
                               if (75 <=  midH && midH <= 180)  {
                                   // do this code, left
-                             } else if ( <= midH  && midH  <= 300  &&  75  <=   midV  &&  midV  <=180)
+                             } else if (200 <= midH  && midH  <= 300  &&  75  <=   midV  &&  midV  <=180){
                                   //COME BACK AND EDIT ANJ 
+                              }
                           }
                       }
                       telemetry.update();
