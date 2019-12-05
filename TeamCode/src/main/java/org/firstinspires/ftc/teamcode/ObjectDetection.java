@@ -41,7 +41,7 @@ public class ObjectDetection extends LinearOpMode {
      * and paste it in to your code on the next line, between the double quotes.
      */
     private static final String VUFORIA_KEY =
-            " -- YOUR NEW VUFORIA KEY GOES HERE  --- ";
+            "AdYtgyD/////AAABmZ/sHnPQl0qsn5ObHbVA/IFiyd+ZgJOUtvOjcSqOoo1zHOXLGF/AmhyU3Ob/+c3Zmcmte192vA+BVTF5ku0IiNU+wooVWpMTDw09D6ZugZUqUERquqOveKbsXV/3ccKVclPh0EpBwmx7V0z2IvLJUnVg7g6/cZSgvDz/725Rm2a8ByC3MQ14D1wd5SMFSu+d1NRaY4d4wXyzdXTUmYZBb2mxS928pxDlbSXu6uYt3sVLrxnNDVqN+kqnVK3V0LFtxkLbBduzxxERXmKpJ7oCTcJNMRkahy063wLS7ejV3Lp9aioo34LICfYEwLh2KKXd4yT6IR1CH6Q2DAgzXER7kZhP0WfIeJr1Uv1F/SB/ed0g";
 
     /**
      * {@link #vuforia} is the variable we will use to store our instance of the Vuforia
@@ -92,14 +92,19 @@ public class ObjectDetection extends LinearOpMode {
                       // step through the list of recognitions and display boundary info.
                       int i = 0;
                       for (Recognition recognition : updatedRecognitions) {
-                        telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
-                        telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
-                                          recognition.getLeft(), recognition.getTop());
-                        telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
-                                recognition.getRight(), recognition.getBottom());
+                       
+                          i++;
+                          if(recognition.getLabel() == "Skystone") {
+                        double midH = (recognition.getLeft()+recognition.getRight())/2;
+                        double midV = (recognition.getTop()+recognition.getBottom())/2;
+                              if (75 <=  midH && midH <= 180)  {
+                                  // do this code, left
+                             } else if ( <= midH  && midH  <= 300  &&  75  <=   midV  &&  midV  <=180)
+                                  //COME BACK AND EDIT ANJ 
+                          }
                       }
                       telemetry.update();
-                    }
+                        
                 }
             }
         }
